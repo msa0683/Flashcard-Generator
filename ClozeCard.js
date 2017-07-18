@@ -17,10 +17,6 @@ function generatePartial(fullText, close) {
 	}
 }
 
-console.log(generatePartial("George Washington was the first president", "George"));
 
-var firstPresidentCloze = new ClozeCard(
-    "George Washington was the first president of the United States.", "George Washington");
-firstPresidentCloze.partial
+module.exports = ClozeCard;
 
-  module.exports = ClozeCard;
