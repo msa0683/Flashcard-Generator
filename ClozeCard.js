@@ -1,16 +1,26 @@
-[
-  {“question”:“Who was the first president of the United States?“,
-  “answer”:“George Washington”},
+ function ClozeCard(fullText, cloze){
 
- {“question”:“Who was the 44rd president of the United States?“,
-  “answer”:“Barack Obama”},
 
- {“question”:“Who was the 44rd president of the United States?“,
-  “answer”:“Barack Obama”},
+	this.fullText = fullText;
+	this.cloze = cloze;
+	this.partial = generatePartial(fullText, cloze);
 
- {“question”:“What is the capital of Australia?“,
-  “answer”:“Canberra”},
+};
 
- {“question”:“What is the only manmade object that is observable from the moon?“,
-  “answer”:“Great Wall of China”}
-]
+
+function generatePartial(fullText, close) {
+	if (fullText.indexOf(close) > -1) {
+		return fullText.replace(close,"...");
+	}
+	else {
+		console.log("Sorry dude, this is not working");
+	}
+}
+
+console.log(generatePartial("George Washington was the first president", "George"));
+
+var firstPresidentCloze = new ClozeCard(
+    "George Washington was the first president of the United States.", "George Washington");
+firstPresidentCloze.partial
+
+  module.exports = ClozeCard;
